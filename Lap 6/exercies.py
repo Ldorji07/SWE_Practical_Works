@@ -58,7 +58,7 @@ class BinarySearchTree:
 
     def _find_height_recursive(self, node):
         if not node:
-            return -1  # Height of empty tree is -1
+            return -1  
         return 1 + max(self._find_height_recursive(node.left), self._find_height_recursive(node.right))
 
     def is_valid_bst(self):
@@ -72,7 +72,6 @@ class BinarySearchTree:
         return (self._is_valid_bst_recursive(node.left, min_value, node.value) and
                 self._is_valid_bst_recursive(node.right, node.value, max_value))
 
-# Example Usage
 bst = BinarySearchTree()
 for value in [5, 3, 7, 2, 4, 6, 8]:
     bst.insert(value)
